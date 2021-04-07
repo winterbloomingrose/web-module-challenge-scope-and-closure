@@ -28,11 +28,14 @@ console.log(processFirstItem(['foo','bar'],function(str){return str+str}));
   Study the code for counter1 and counter2, then answer the questions below.
   
   1. What is the difference between counter1 and counter2?
-  
+      Counter1 is a variable with function countMaker assigned to it. Countmaker has local variable 'count' (function scope), then returns a nested function. The return function in Counter1 can access the variable 'count', even though it is 'outside' of itself. 
+      Counter2 is a function that takes a global scope variable, then returns that variable after an operator is performed on it.
+
   2. Which of the two uses a closure? How can you tell?
-  
-  3. In what scenario would the counter1 code be preferable? In what scenario would 
-     counter2 be better?  
+      Counter1 uses a closure, as all of the code is inside of a function, and the variable 'count' is accessed within a nested function.
+
+  3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better?  
+      Counter2 is preferable if the count needs to be accessed in the global scope by multiple scripts/functions. Counter1 is more compact, but 'count' cannot be accessed from the global scope/inward-ly. 
 */
 
 // counter1 code
