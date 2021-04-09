@@ -109,8 +109,8 @@ Use the getInningScore() function below to do the following:
 
 function getInningScore(myCallback) {
   let scoreKeep = {
-    Home: myCallback();
-    Away: myCallback();
+    Home: myCallback(),
+    Away: myCallback(),
   }
   return scoreKeep
 }
@@ -158,11 +158,16 @@ Use the scoreboard function below to do the following:
 ]  
   */
 
-function scoreboard(/* CODE HERE */) {
-  /* CODE HERE */
+
+function scoreboard(inning, getInningScore, numberInnings) {
+  const inningList = [];
+  for (let i=0; i<=numberInnings; i++) {
+    inningList.push(getInningScore(inning))
+  }
+return inningList
 }
 
-
+console.log(scoreboard(inning, getInningScore, 10))
 
 
 /* 🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑 */
