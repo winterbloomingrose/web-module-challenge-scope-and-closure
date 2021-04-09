@@ -43,6 +43,22 @@ Find the file `index.js` and complete the tasks.
 Edit the `ReadMe` file with your answers.
 
 1. In your own words, define closure (1-2 sentences).
+<!-- Closure is when an inner function has access to an outer function in its local scope. Inner functions nested inside bigger functions can "reach upwards" and reference "less" nested variables.
+
+For example:
+
+function funOne(num1) {
+    return function (num2) {
+      return num1 + num2;
+    }
+  return funTwo;
+  }
+
+var wildCard = funOne(30);
+console.log(funOne(2));
+console.log(wildCard(20))
+
+-->
 2. Study the following code, then answer the questions below.
 
 ```js
@@ -64,8 +80,13 @@ dansRoll();
 ```
 
 a. Where is closure used in this code? How can you tell?
+<!-- Closure is used in "dansRoll" and "zoesRoll" because it is able to reach up and access personalDice, but personalDice cannot do the same to it.-->
+
 b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
+<!-- The difference between each call of 'dansRoll' is the fact that each calling of it executes the personalDice function independently. Though both calls return a number between 1-6, each calling of 'dansRoll' will return a different answer as the function returns a random number. -->
+
 c. What is the lexical scope of `newRoll`? 
+<!-- Variable newRoll's lexical scope is local to personalDice, its parent function.-->
 
 
 ### Task 3 - Stretch Goals
